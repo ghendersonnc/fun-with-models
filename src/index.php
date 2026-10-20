@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require_once '/var/www/app/vite_assets.php';
+
 $phpVersion = PHP_VERSION;
 ?>
 <!doctype html>
@@ -9,36 +11,11 @@ $phpVersion = PHP_VERSION;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nginx + PHP</title>
-    <style>
-        :root {
-            color-scheme: light;
-            font-family: system-ui, sans-serif;
-            background: #f4f6f8;
-            color: #17212b;
-        }
-        body {
-            box-sizing: border-box;
-            display: grid;
-            min-height: 100vh;
-            margin: 0;
-            padding: 2rem;
-            place-items: center;
-        }
-        main {
-            width: min(100%, 38rem);
-            padding: 2.5rem;
-            border: 1px solid #dce3e9;
-            border-radius: 1rem;
-            background: white;
-            box-shadow: 0 1rem 3rem #17212b12;
-        }
-        h1 { margin-top: 0; }
-        code {
-            padding: .2rem .45rem;
-            border-radius: .3rem;
-            background: #eef2f5;
-        }
-    </style>
+    <?php try {
+        echo renderViteAssets(__DIR__);
+    } catch (JsonException $e) {
+
+    } ?>
 </head>
 <body>
     <main>
