@@ -1,0 +1,18 @@
+services:
+  poopy:
+    image: php:8.3-fpm-alpine
+    working_dir: /var/www/html
+    volumes:
+      - ./src:/var/www/html:ro
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    depends_on:
+      - poopy
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped
