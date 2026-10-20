@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  background: #f4f6f8;
+  color: #17212b;
+}
+
+body {
+  background: red;
+  box-sizing: border-box;
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  place-items: center;
+}
+
+main {
+  width: min(100%, 38rem);
+  padding: 2.5rem;
+  border: 1px solid #dce3e9;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 1rem 3rem #17212b12;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+code {
+  padding: .2rem .45rem;
+  border-radius: .3rem;
+  background: #eef2f5;
+}
