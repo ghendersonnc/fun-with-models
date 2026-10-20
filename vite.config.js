@@ -20,7 +20,7 @@ export default defineConfig({
     manifest: true,
     outDir: resolve(projectRoot, 'src/assets/build'),
     rollupOptions: {
-      input: resolve(projectRoot, 'frontend/js/main.js'),
+      input: resolve(projectRoot, 'resources/js/main.js'),
     },
   },
 });
